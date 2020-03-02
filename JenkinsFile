@@ -5,7 +5,7 @@ pipeline {
         
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/CH'
+        git 'https://github.com/CHGovindaRao/Accessibility.git'
       }
     }
         
