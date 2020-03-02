@@ -7,7 +7,7 @@ pipeline {
     stage('Cloning Git') {
       steps {
         
-        url: 'git@github.com:CHGovindaRao/Accessibility.git')
+        url: 'git@github.com:CHGovindaRao/Accessibility.git'
       }
     }
         
