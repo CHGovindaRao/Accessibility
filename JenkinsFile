@@ -3,21 +3,18 @@ pipeline {
     
   tools {nodejs "node"}
     
-  stages {
-        
+
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/springernature/qa-playground.git'
+        
+        url: 'git@github.com:CHGovindaRao/Accessibility.git')
       }
     }
         
-    stage('Install dependencies') {
+        stage('Build') {
       steps {
-        sh 'npm install'
-        sh 'npm init'
-        sh 'npm install pa11y'
-      }
-    }
+          rtMaven.run pom: 'pom.xml', 
+          goals: 'clean install'    
      
     stage('Test') {
       steps {
