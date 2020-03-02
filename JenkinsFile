@@ -3,18 +3,19 @@ pipeline {
     
   tools {nodejs "node"}
     
-
+  stages {
+        
     stage('Cloning Git') {
       steps {
-        
-        url: 'git@github.com:CHGovindaRao/Accessibility.git'
+        git 'https://github.com/CH'
       }
     }
         
-        stage('Build') {
+    stage('Install dependencies') {
       steps {
-          rtMaven.run pom: 'pom.xml', 
-          goals: 'clean install'    
+        sh 'npm install'
+      }
+    }
      
     stage('Test') {
       steps {
@@ -22,5 +23,4 @@ pipeline {
       }
     }      
   }
- }
 }
