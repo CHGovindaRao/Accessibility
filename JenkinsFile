@@ -1,6 +1,6 @@
 pipeline {
   agent any
-    
+    tools {nodejs "node"}
   stages {
         
     stage('Cloning Git') {
@@ -11,7 +11,7 @@ pipeline {
         
     stage('Install dependencies') {
       steps {
-        sh 'npm install'
+        sh 'npm config ls'
       }
     }
      
